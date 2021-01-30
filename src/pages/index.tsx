@@ -1,11 +1,12 @@
-import React from "react"
-
-const Pek = ({ n }: { n: number }) => <span>{n}</span>
+import React from 'react'
+import { SEO } from '../features/seo'
 
 const Home = () => (
-  <div>
-    <Pek n={23} />
-  </div>
+  <>
+    <SEO title="kekpek.dev" />
+    <h1>hello</h1>
+    <h2>world</h2>
+  </>
 )
 
 export default Home
