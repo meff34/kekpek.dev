@@ -1,0 +1,9 @@
+pre-commit:
+  commands:
+    typecheck:
+      tags: frontend typecheck
+      glob: "*.tsx"
+      run: npm run type-check
+
+skip_output:
+  - meta
