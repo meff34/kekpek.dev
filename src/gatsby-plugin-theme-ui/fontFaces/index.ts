@@ -1,0 +1,1 @@
+export { jetBrainsFontFaces } from './jetBrainsMono'

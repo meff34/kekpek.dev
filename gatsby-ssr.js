@@ -1,5 +1,6 @@
-import React from 'react'
-// noinspection ES6PreferShortImport
-import { Theme } from './src/features/theme'
+import { jsx, InitializeColorMode } from 'theme-ui'
+export { wrapRootElement } from './src/features/wrap'
 
-export const wrapRootElement = ({ element }) => <Theme>{element}</Theme>
+export const onRenderBody = ({ setPreBodyComponents }) => {
+  setPreBodyComponents([jsx(InitializeColorMode, { key: 'theme-ui-no-flash' })])
+}

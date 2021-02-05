@@ -51,7 +51,7 @@ type SeoProps = {
   title?: string
 }
 
-export const SEO = ({ title = '' }: SeoProps) => {
+export const SEO = ({ title = 'kekpek.dev' }: SeoProps) => {
   const {
     site: {
       siteMetadata: {
