@@ -53,5 +53,11 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-webpack-size',
     'gatsby-plugin-theme-ui',
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: [process.env.GOOGLE_TAG_ID],
+      },
+    },
   ],
 }
