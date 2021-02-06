@@ -7,7 +7,11 @@ type LinkProps = {
   to: GatsbyLinkProps<never>['to']
 }
 
-const PatchedGatsbyLink = ({ href }: ThemeUiLinkProps) => <GatsbyLink to={href ?? '/'} />
+const PatchedGatsbyLink = ({ href, className, children, ...props }: ThemeUiLinkProps) => (
+  <GatsbyLink className={className} to={href ?? '/'}>
+    {children}
+  </GatsbyLink>
+)
 
 export const Link = ({ children, to }: LinkProps) => (
   <ThemeUiLink as={PatchedGatsbyLink} href={to}>
