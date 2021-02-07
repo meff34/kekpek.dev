@@ -5,7 +5,7 @@ import { Link } from 'gatsby'
 import { Button } from './Button'
 import { useColorToggle } from '../color-mode'
 
-const AppBar = styled.div<HeaderProps>`
+const AppBar = styled.header<HeaderProps>`
   display: flex;
   flex-flow: row nowrap;
   justify-content: ${(props) => (props.home ? 'flex-end' : 'space-between')};

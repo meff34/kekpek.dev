@@ -2,8 +2,8 @@ import { useColorMode as useThemeUiColorMode } from 'theme-ui'
 import { useEffect } from 'react'
 
 enum MODES {
-  LIGHT = 'default',
-  DARK = 'dark',
+  DARK = 'default',
+  LIGHT = 'burningEyes',
 }
 
 const INIT_STORAGE_KEY = 'color-mode-has-been-initialized'

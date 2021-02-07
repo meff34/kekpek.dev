@@ -60,17 +60,20 @@ export const styles = {
   },
   pre: {
     variant: `text.code`,
-    marginBottom: 4,
+    // marginBottom: 4,
     color: `secondary`,
     bg: `muted`,
     overflowX: `auto`,
   },
   code: {
     variant: `text.code`,
-    paddingX: 4,
-    paddingY: 3,
+    // paddingX: 4,
+    // paddingY: 3,
     color: `text`,
     ...prism,
+  },
+  '.token-line': {
+    paddingX: 45,
   },
   inlineCode: {
     variant: `text.code`,

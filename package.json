@@ -15,7 +15,6 @@
     "show": "npm run build && npm run serve"
   },
   "dependencies": {
-    "@arkweid/lefthook": "^0.7.2",
     "@emotion/react": "^11.1.4",
     "@emotion/styled": "^11.0.0",
     "@mdx-js/mdx": "^1.6.22",
@@ -48,6 +47,7 @@
     "typography-theme-github": "^0.16.19"
   },
   "devDependencies": {
+    "@arkweid/lefthook": "^0.7.2",
     "@types/node": "^14.14.22",
     "@types/react": "^16.9.56",
     "@types/react-dom": "^16.9.9",

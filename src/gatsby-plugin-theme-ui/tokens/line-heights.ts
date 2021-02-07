@@ -1,1 +1,1 @@
-export const lineHeights = [1, 1.5]
+export const lineHeights = [1, 1.8]

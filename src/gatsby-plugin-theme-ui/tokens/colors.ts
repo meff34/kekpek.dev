@@ -28,21 +28,29 @@ const prismDark = {
   builtin: '#98c379',
 }
 
-export const colors = {
-  useColorSchemeMediaQuery: true,
+const lightTheme = {
   ...swiss.colors,
-  ...prismLight,
   muted: '#ebe4e0',
   background: '#f3f3f1',
+
+  ...prismLight,
+}
+
+const darkTheme = {
+  ...deep.colors,
+  text: '#ebebeb',
+  background: '#3a3c45',
+  muted: '#343541',
+  primary: '#ef8354',
+  secondary: '#dc6976',
+
+  ...prismDark,
+}
+
+export const colors = {
+  useColorSchemeMediaQuery: true,
+  ...darkTheme,
   modes: {
-    dark: {
-      ...deep.colors,
-      text: '#ebebeb',
-      background: '#3a3c45',
-      muted: '#343541',
-      primary: '#ef8354',
-      secondary: '#dc6976',
-      ...prismDark,
-    },
+    burningEyes: lightTheme,
   },
 }

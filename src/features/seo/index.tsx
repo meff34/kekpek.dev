@@ -87,6 +87,8 @@ export const SEO = ({ title = 'kekpek.dev' }: SeoProps) => {
         title,
         twitter,
       })}
-    />
+    >
+      <meta name="viewport" content="width=device-width, user-scalable=no" />
+    </Helmet>
   )
 }
