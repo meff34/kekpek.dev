@@ -6,7 +6,7 @@ import { Footer } from './Footer'
 const Container = styled.div`
   max-width: 800px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 16px;
   min-height: 100vh;
   display: flex;
   flex-flow: column;

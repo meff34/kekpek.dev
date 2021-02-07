@@ -5,19 +5,20 @@ import { Link } from '../components'
 
 const List = styled.ul`
   list-style: none;
+  padding: 0;
 `
 
 const Item = styled.li`
-  padding: 12px 16px;
-  margin-bottom: 16px;
+  margin-bottom: 24px;
 `
 
 const Title = styled.h3`
-  margin: 0 0 16px;
+  display: inline-block;
+  margin: 0;
 `
 
 const Description = styled.h6`
-  margin-top: 0;
+  margin: 0;
 `
 
 type ListProps = {
@@ -26,14 +27,12 @@ type ListProps = {
 
 export const ArticlesList = ({ articles }: ListProps) => (
   <List>
-    {articles.map(({ id, frontmatter, timeToRead }) => (
+    {articles.map(({ id, frontmatter }) => (
       <Item key={id}>
+        <Description>[Chapter #{frontmatter.chapter}]</Description>
         <Link to={frontmatter.slug}>
           <Title>{frontmatter.title}</Title>
         </Link>
-        <Description>
-          [Chapter #{frontmatter.chapter}], {timeToRead} min.
-        </Description>
       </Item>
     ))}
   </List>

@@ -11,10 +11,6 @@ slug: 'leaving-react-js-chat'
 
 ---
 
-```typescript
-// kek
-```
-
 ## Это не тот чат
   
 На самом деле «тот чат» скорее всего есть  [вот тут](https://github.com/Asgoret/devops_chats/blob/master/Friendly_chats.md)
