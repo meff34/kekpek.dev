@@ -1,5 +1,5 @@
 const { makeApi } = require('./gatsby/api')
-const { makePageCreators } = require('./gatsby/pageCreators')
+const { makePageCreators } = require('./gatsby/page-creators')
 
 exports.createPages = async (gatsby) => {
   const api = makeApi(gatsby)

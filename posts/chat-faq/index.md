@@ -2,6 +2,7 @@
 slug: chat-faq
 description: Для @react_js от Деда
 title: Faq для чата
+date: 2021-02-11
 ---
 
 > Для [@react_js](https://t.me/react_js) от Деда

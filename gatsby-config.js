@@ -1,11 +1,20 @@
+const { getRssOptions } = require('./gatsby/rss-configuration')
+
+const domain = process.env.DOMAIN_NAME || 'kekpek.dev'
+
 module.exports = {
   siteMetadata: {
     keywords:
       'frontend, developer, blog, javascript, typescript, gatsby, personal, functional programming, fantasy land, algebraic javascript',
     description: `Personal blog with keks, peks and chebureks`,
-    domain: 'kekpek.dev',
+    domain,
+    siteUrl: `https://${domain}`,
   },
   plugins: [
+    {
+      resolve: 'gatsby-plugin-feed',
+      options: getRssOptions(),
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

@@ -4,6 +4,7 @@ tag: fantasy-land
 chapter: 2
 title: Cигнатуры Дамаса-Хиндли-Милнера
 description: Как читать сигнатуры типов в Fantasy land
+date: 2021-02-11
 ---
 
 # Сигнатуры
