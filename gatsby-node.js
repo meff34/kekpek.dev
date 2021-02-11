@@ -11,7 +11,7 @@ exports.createPages = async (gatsby) => {
     pages.createBlogPost(fantasyPost)
   }
 
-  const specialPost = await api.getPostBySlug('leaving-react-js-chat')
+  const specialPost = await api.getPostBySlug('chat-faq')
 
   pages.createBlogPost(specialPost)
 }
