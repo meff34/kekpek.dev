@@ -10,6 +10,10 @@ export const pageQuery = graphql`
     mdx(id: { eq: $id }) {
       id
       body
+      frontmatter {
+        description
+        title
+      }
     }
   }
 `
@@ -19,17 +23,28 @@ type Props = {
     mdx: {
       id: string
       body: string
+      frontmatter: {
+        title: string
+        description: string
+      }
     }
   }
 }
 
-const BlogPostTemplate = ({ data }: Props) => (
+const BlogPostTemplate = ({
+  data: {
+    mdx: {
+      body,
+      frontmatter: { title, description },
+    },
+  },
+}: Props) => (
   <ArticleLayout>
-    <SEO />
+    <SEO title={title} description={description} article />
     <Header />
 
     <article>
-      <MDXRenderer>{data.mdx.body}</MDXRenderer>
+      <MDXRenderer>{body}</MDXRenderer>
     </article>
   </ArticleLayout>
 )

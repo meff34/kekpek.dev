@@ -3,7 +3,7 @@ slug: fantasy-land/daggy
 tag: fantasy-land
 chapter: 1
 title: Daggy
-origin: http://www.tomharding.me/2017/03/03/fantas-eel-and-specification/
+description: Библиотека daggy
 ---
 
 
@@ -193,3 +193,5 @@ List.from([1, 2, 3])
 Также, перед тем, как с головой погружаться в структуры Fantasy Land, нам с тобой нужно обсудить ещё одну тему: сигнатуры типов.
 
 А пока, береги себя! ❤️
+
+###### [Ссылка на оригинал](http://www.tomharding.me/2017/03/03/fantas-eel-and-specification/)
