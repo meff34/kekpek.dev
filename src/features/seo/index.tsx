@@ -2,71 +2,27 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
 
-type Meta = JSX.IntrinsicElements['meta']
-
-const getMeta = ({
-  metaDescription,
-  title,
-  twitter,
-}: {
-  metaDescription: string
-  title: string
-  twitter: string
-}): Meta[] => [
-  {
-    name: `description`,
-    content: metaDescription,
-  },
-  {
-    property: `og:title`,
-    content: title,
-  },
-  {
-    property: `og:description`,
-    content: metaDescription,
-  },
-  {
-    property: `og:type`,
-    content: `website`,
-  },
-  {
-    name: `twitter:card`,
-    content: `summary`,
-  },
-  {
-    name: `twitter:creator`,
-    content: twitter,
-  },
-  {
-    name: `twitter:title`,
-    content: title,
-  },
-  {
-    name: `twitter:description`,
-    content: metaDescription,
-  },
-]
-
 type SeoProps = {
   title?: string
+  description?: string
+  article?: boolean
 }
 
-export const SEO = ({ title = 'kekpek.dev' }: SeoProps) => {
-  const {
-    site: {
-      siteMetadata: {
-        description,
-        social: { twitter },
-      },
-    },
-  } = useStaticQuery(
+const useQuery = () =>
+  useStaticQuery(
     graphql`
       query {
         site {
           siteMetadata {
+            keywords
             description
-            social {
-              twitter
+            domain
+          }
+        }
+        file(base: { eq: "mage.png" }) {
+          childImageSharp {
+            fixed {
+              src
             }
           }
         }
@@ -74,20 +30,34 @@ export const SEO = ({ title = 'kekpek.dev' }: SeoProps) => {
     `,
   )
 
-  const metaDescription = description
+export const SEO = ({ title: pageTitle, description: pageDescription, article }: SeoProps) => {
+  const {
+    site: {
+      siteMetadata: { keywords, domain, description: generalDescription },
+    },
+    file: {
+      childImageSharp: {
+        fixed: { src: ogImage },
+      },
+    },
+  } = useQuery()
+
+  const title = pageTitle ? `${pageTitle} | ${domain}` : domain
+  const metaDescription = pageDescription || generalDescription
 
   return (
-    <Helmet
-      htmlAttributes={{
-        lang: 'ru',
-      }}
-      title={title}
-      meta={getMeta({
-        metaDescription,
-        title,
-        twitter,
-      })}
-    >
+    <Helmet htmlAttributes={{ lang: 'ru' }}>
+      <title>{title}</title>
+      <meta name="title" content={title} />
+      <meta name="keywords" content={keywords} />
+      <meta name="description" content={metaDescription} />
+
+      <meta property="og:type" content={article ? 'article' : 'website'} />
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={metaDescription} />
+      <meta property="og:image" content={`https://${domain}${ogImage}`} />
+      <meta property="og:locale" content="ru_RU" />
+
       <meta name="viewport" content="width=device-width, user-scalable=no" />
     </Helmet>
   )

@@ -9,6 +9,6 @@ const FooterWrap = styled.div`
 
 export const Footer = () => (
   <FooterWrap>
-    <Link href="https://t.me/gorbunov_i">@gorbunov_i</Link>
+    <Link href="https://t.me/kekpek_dev">@kekpek_dev</Link>
   </FooterWrap>
 )

@@ -2,6 +2,7 @@ import React from 'react'
 import { ArticleSummary } from './types'
 import styled from '@emotion/styled'
 import { Link } from '../components'
+import { Link as ExternalLink } from 'theme-ui'
 
 const List = styled.ul`
   list-style: none;
@@ -26,14 +27,20 @@ type ListProps = {
 }
 
 export const ArticlesList = ({ articles }: ListProps) => (
-  <List>
-    {articles.map(({ id, frontmatter }) => (
-      <Item key={id}>
-        <Description>[Chapter #{frontmatter.chapter}]</Description>
-        <Link to={frontmatter.slug}>
-          <Title>{frontmatter.title}</Title>
-        </Link>
-      </Item>
-    ))}
-  </List>
+  <>
+    <h5>
+      Перевод <ExternalLink href="http://www.tomharding.me/fantasy-land/">серии статей</ExternalLink> про
+      "алгебраический js"
+    </h5>
+    <List>
+      {articles.map(({ id, frontmatter }) => (
+        <Item key={id}>
+          <Description>[Chapter #{frontmatter.chapter}]</Description>
+          <Link to={frontmatter.slug}>
+            <Title>{frontmatter.title}</Title>
+          </Link>
+        </Item>
+      ))}
+    </List>
+  </>
 )

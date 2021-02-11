@@ -1,19 +1,22 @@
 module.exports = {
   siteMetadata: {
-    author: {
-      name: `Ivan (yeah, that one)`,
-    },
-    description: `We make keks here`,
-    social: {
-      twitter: `meff34`,
-      telegram: '@gorbunov_i',
-    },
+    keywords:
+      'frontend, developer, blog, javascript, typescript, gatsby, personal, functional programming, fantasy land, algebraic javascript',
+    description: `Personal blog with keks, peks and chebureks`,
+    domain: 'kekpek.dev',
   },
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/posts`,
+        name: `posts`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/assets`,
         name: `assets`,
       },
     },

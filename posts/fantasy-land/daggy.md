@@ -1,14 +1,13 @@
 ---
-slug: daggy
+slug: fantasy-land/daggy
 tag: fantasy-land
 chapter: 1
 title: Daggy
+description: Библиотека daggy
 ---
 
 
 # Daggy
-
-[Ссылка на оригинал](http://www.tomharding.me/2017/03/03/fantas-eel-and-specification/)
 
 Снова привет, интернет! Как фанатик ФП и JavaScript-разработчик, я провожу **очень много** времени, размышляя о пересечении этих двух сфер. В этой серии статей мы тесно познакомимся со спецификацией [Fantasy Land](https://github.com/fantasyland/fantasy-land), а также разберём примеры использования её тайпклассов (typeclasses). Но для начала нам нужно познакомиться с [`daggy`](https://github.com/fantasyland/daggy).
 
@@ -25,11 +24,11 @@ import { tagged } from 'daggy'
 ```js
 // Координата в трёхмерном пространстве.
 // Coord :: (Int, Int, Int) -> Coord
-const Coord = daggy.tagged('Coord', ['x', 'y', 'z'])
+const Coord = tagged('Coord', ['x', 'y', 'z'])
 
 // Линия между двумя координатами.
 // Line :: (Coord, Coord) -> Line
-const Line = daggy.tagged('Line', ['from', 'to'])
+const Line = tagged('Line', ['from', 'to'])
 ```
 
 Результат достаточно интуитивен:
@@ -66,7 +65,7 @@ import { taggedSum } from 'daggy'
 Теперь немного интереснее. Давай подумаем о типе boolean: он имеет два значения – `True` и `False`. Для описания структуры `Bool` нам необходимо создать тип с несколькими конструкторами (то, что мы называем **типом-суммой**):
 
 ```jsx
-const Bool = daggy.taggedSum('Bool', {
+const Bool = taggedSum('Bool', {
   True: [],
   False: [],
 })
@@ -75,7 +74,7 @@ const Bool = daggy.taggedSum('Bool', {
 Различные формы нашего типа мы называем его **конструкторами (type constructors)**: в приведённом выше случае это `True` и `False`, оба не имеют аргументов. Как насчёт создания более сложного типа на основе примера из `tagged`?
 
 ```jsx
-const Shape = daggy.taggedSum('Shape', {
+const Shape = taggedSum('Shape', {
   // Square :: (Coord, Coord) -> Shape
   Square: ['topleft', 'bottomright'],
 
@@ -150,7 +149,7 @@ Bool.prototype.thenElse = function(then, or) {
 Как заключительный пример использования `taggedSum` (я надеюсь, `tagged` показалась тебе достаточно простой), ниже приведена реализация связного списка и нескольких полезных функций:
 
 ```jsx
-const List = daggy.taggedSum('List', {
+const List = taggedSum('List', {
   Cons: ['head', 'tail'], Nil: []
 })
 
@@ -193,4 +192,6 @@ List.from([1, 2, 3])
 
 Также, перед тем, как с головой погружаться в структуры Fantasy Land, нам с тобой нужно обсудить ещё одну тему: сигнатуры типов.
 
-А пока, береги себя! ♥
+А пока, береги себя! ❤️
+
+###### [Ссылка на оригинал](http://www.tomharding.me/2017/03/03/fantas-eel-and-specification/)

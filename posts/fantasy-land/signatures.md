@@ -1,13 +1,13 @@
 ---
-slug: signatures
+slug: fantasy-land/signatures
 tag: fantasy-land
 chapter: 2
 title: Cигнатуры Дамаса-Хиндли-Милнера
+description: Как читать сигнатуры типов в Fantasy land
 ---
 
 # Сигнатуры
 
-> [Ссылка на оригинал](http://www.tomharding.me/2017/03/08/fantas-eel-and-specification-2/)
 
 Приветствую, путешественник. Надеюсь, ты отличненько угорел по первой части этой серии. В конце статьи я упоминал – есть ещё одна малюсенькая вещь, о которой, по моему мнению, нам стоит поговорить перед тем, как нырять в Fantasy Land: [сигнатуры Дамаса-Хиндли-Милнера.](https://en.wikipedia.org/wiki/Hindley–Milner_type_system)
 
@@ -54,9 +54,9 @@ const zipWith = f => xs => ys => {
   )
 
   return Array.from(
-		{ length },
-		(_, i) => f(xs[i])(ys[i]),
-	)
+    { length },
+    (_, i) => f(xs[i])(ys[i]),
+  )
 }
 
 zipWith(x => y => x + y)([1, 2])([4, 5, 6]) // [ 5, 7 ]
@@ -159,3 +159,5 @@ List.prototype.toArray = function () {
 
 
 Береги себя! ❤️
+
+###### [Ссылка на оригинал](http://www.tomharding.me/2017/03/08/fantas-eel-and-specification-2/)
