@@ -1,4 +1,4 @@
-const { fetch } = require('./gatsbyTransport')
+const { fetch } = require('./gatsby-transport')
 
 const makeApi = (gatsby) => ({
   getPostBySlug: async (frontmatterSlug) => {
