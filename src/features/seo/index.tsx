@@ -21,7 +21,7 @@ const useQuery = () =>
         }
         file(base: { eq: "mage.png" }) {
           childImageSharp {
-            fixed {
+            fixed(width: 384) {
               src
             }
           }
