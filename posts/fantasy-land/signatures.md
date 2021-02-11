@@ -1,13 +1,13 @@
 ---
-slug: signatures
+slug: fantasy-land/signatures
 tag: fantasy-land
 chapter: 2
 title: Cигнатуры Дамаса-Хиндли-Милнера
+origin: http://www.tomharding.me/2017/03/08/fantas-eel-and-specification-2/
 ---
 
 # Сигнатуры
 
-> [Ссылка на оригинал](http://www.tomharding.me/2017/03/08/fantas-eel-and-specification-2/)
 
 Приветствую, путешественник. Надеюсь, ты отличненько угорел по первой части этой серии. В конце статьи я упоминал – есть ещё одна малюсенькая вещь, о которой, по моему мнению, нам стоит поговорить перед тем, как нырять в Fantasy Land: [сигнатуры Дамаса-Хиндли-Милнера.](https://en.wikipedia.org/wiki/Hindley–Milner_type_system)
 
