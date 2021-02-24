@@ -16,10 +16,6 @@ export const text = {
   italic: {
     fontStyle: `italic`,
     fontSynthesis: `none`,
-    '@supports (font-variation-settings: normal)': {
-      fontVariationSettings: `'slnt' -10`,
-      fontStyle: `oblique 10deg`,
-    },
   },
   bold: {
     fontWeight: `bold`,
