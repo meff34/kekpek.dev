@@ -12,6 +12,13 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: '@sentry/gatsby',
+      options: {
+        dsn: process.env.SENTRY_DSN,
+        sampleRate: 0.7,
+      },
+    },
+    {
       resolve: 'gatsby-plugin-feed',
       options: getRssOptions(),
     },
