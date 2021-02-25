@@ -1,10 +1,12 @@
-import monoRegularWoff2 from '../../assets/fonts/JetBrainsMono-Regular.woff2'
-import monoBoldWoff2 from '../../assets/fonts/JetBrainsMono-Bold.woff2'
+import monoRegular from '../../assets/fonts/JetBrainsMono-Regular.woff2'
+import monoBold from '../../assets/fonts/JetBrainsMono-ExtraBold.woff2'
+import italic from '../../assets/fonts/JetBrainsMono-Italic.woff2'
+import italicBold from '../../assets/fonts/JetBrainsMono-BoldItalic.woff2'
 
 export const jetBrainsFontFaces = `
 @font-face {
     font-family: 'JetBrains Mono';
-    src: url('${monoRegularWoff2}') format('woff2');
+    src: url('${monoRegular}') format('woff2');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -12,9 +14,25 @@ export const jetBrainsFontFaces = `
 
 @font-face {
     font-family: 'JetBrains Mono';
-    src: url('${monoBoldWoff2}') format('woff2');
+    src: url('${monoBold}') format('woff2');
     font-weight: bold;
     font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url('${italic}') format('woff2');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url('${italicBold}') format('woff2');
+    font-weight: bold;
+    font-style: italic;
     font-display: swap;
 }
 `
