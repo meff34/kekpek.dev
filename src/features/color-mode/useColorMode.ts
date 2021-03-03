@@ -20,12 +20,15 @@ export const useColorToggle = () => {
   return [isItLightMode, toggle] as const
 }
 
+const matchMediaSupport = () => 'matchMedia' in window
+
 export const useColorMode = () => {
   const [, setMode] = useThemeUiColorMode<MODES>()
 
   useEffect(() => {
     const isInitialized = checkInitializationStatus()
     if (isInitialized) return
+    if (!matchMediaSupport()) return
 
     const initialMode = matchMedia('(prefers-color-scheme: dark)').matches ? MODES.DARK : MODES.LIGHT
 
@@ -35,6 +38,7 @@ export const useColorMode = () => {
   }, [setMode])
 
   useEffect(() => {
+    if (!matchMediaSupport()) return
     matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
       setMode(e.matches ? MODES.DARK : MODES.LIGHT)
     })

@@ -29,8 +29,11 @@ type ListProps = {
 export const ArticlesList = ({ articles }: ListProps) => (
   <>
     <h5>
-      Перевод <ExternalLink href="http://www.tomharding.me/fantasy-land/">серии статей</ExternalLink> про
-      "алгебраический js"
+      Перевод{' '}
+      <ExternalLink target="_blank" rel="noreferrer" href="http://www.tomharding.me/fantasy-land/">
+        серии статей
+      </ExternalLink>{' '}
+      про "алгебраический js"
     </h5>
     <List>
       {articles.map(({ id, frontmatter }) => (
