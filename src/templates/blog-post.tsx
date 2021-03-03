@@ -4,6 +4,8 @@ import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
 import { SEO } from '../features/seo'
 import { ArticleLayout } from '../features/layout'
 import { Header } from '../features/header'
+import { MDXProvider } from '@mdx-js/react'
+import { IsomorphicLink } from '../features/components/IsomorphicLink'
 
 export const pageQuery = graphql`
   query BlogPostBySlug($id: String!) {
@@ -44,7 +46,9 @@ const BlogPostTemplate = ({
     <Header />
 
     <article>
-      <MDXRenderer>{body}</MDXRenderer>
+      <MDXProvider components={{ a: IsomorphicLink }}>
+        <MDXRenderer>{body}</MDXRenderer>
+      </MDXProvider>
     </article>
   </ArticleLayout>
 )
